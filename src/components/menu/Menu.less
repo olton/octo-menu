@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.octo-menu {
+    background: var(--octo-menu-background);
+    color: var(--octo-menu-text-color);
+    display: block;
+    position: relative;
+}
+
+.octo-menu__section {
+    display: flex;
+    padding: 4px 4px;
+    border-bottom: 1px solid var(--octo-menu-border-color);
+    justify-content: flex-start;
+    flex-shrink: 0;
+    flex-flow: row nowrap;
+}
+
+.octo-menu__divider {
+    display: block;
+    position: relative;
+    margin: 0 4px;
+    height: 100%;
+    min-height: 64px;
+    width: 1px;
+    background-color: transparent;
+}
+
+.octo-menu__group {
+    padding: 0 4px 24px;
+    display: flex;
+    cursor: default;
+    background-color: inherit;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+
+    &:nth-child(1):last-child {
+        flex-basis: 100%;
+    }
+
+    .title {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        line-height: 24px;
+        height: 20px;
+        font-size: 11px;
+        text-align: center;
+        border-top: 1px solid var(--octo-menu-border-color);
+        white-space: nowrap;
+    }
+
+    & > *:not(.title) {
+        margin: 2px;
+    }
+
+    .octo-menu__group__divider-h {
+        width: 100%;
+        height: 1px;
+        background: var(--octo-menu-border-color);
+    }
+    .octo-menu__group__divider-v {
+        width: 1px;
+        height: 100%;
+        background: var(--octo-menu-border-color);
+    }
+}
+
+.octo-menu__group + .octo-menu__group {
+    border-left: 1px solid var(--octo-menu-border-color);
+}

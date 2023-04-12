@@ -1,0 +1,85 @@
+.octo-menu__dropdown-menu {
+    background: var(--octo-menu-dropdown-menu-background);
+    color: var(--octo-menu-dropdown-menu-text-color);
+    box-shadow: 2px 2px 2px 0 var(--octo-menu-dropdown-menu-shadow);
+    font-size: 14px;
+    padding: 4px;
+    border: 1px solid var(--octo-menu-border-color);
+}
+
+.octo-menu__dropdown-item {
+    position: relative;
+    user-select: none;
+    a {
+        text-decoration: none;
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+        color: var(--octo-menu-dropdown-menu-text-color);
+        padding: 4px 8px 4px 28px;
+    }
+
+    &:not([disabled]):hover,
+    &:not(.disabled):hover
+    {
+        border-color: transparent;
+        background-color: var(--octo-menu-dropdown-menu-background-hover);
+        color: var(--octo-menu-dropdown-menu-text-color-hover);
+    }
+
+    &.checked {
+        &::before, &::after {
+            position: absolute;
+            display: block;
+            content: "";
+        }
+
+        &::before {
+            background-color: transparent;
+            border-color: var(--octo-menu-dropdown-menu-checked-border)!important;
+            border-left: 2px solid;
+            border-bottom: 2px solid;
+            height: .325rem;
+            width: .5rem;
+            left: .5rem;
+            top: 50%;
+            transform: translateY(-80%) rotate(-45deg);
+            z-index: 2;
+        }
+
+        &::after {
+            width: 23px;
+            height: 22px;
+            top: 2px;
+            left: 0;
+            z-index: 1;
+            border: 1px solid var(--octo-menu-dropdown-menu-checked-border);
+            background-color: var(--octo-menu-dropdown-menu-checked-background);
+            color: var(--octo-menu-dropdown-menu-checked-text-color);
+        }
+    }
+
+    &.hotkey-enabled {
+        a > .hotkey-key{
+            margin-left: auto;
+            padding-left: 8px;
+            color: var(--octo-menu-dropdown-menu-hotkey-text-color);
+        }
+    }
+}
+
+.octo-menu__dropdown-divider {
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: relative;
+    background-color: var(--octo-menu-border-color);
+    pointer-events:none;
+}
+
+* + .octo-menu__dropdown-divider {
+    margin-top: 4px;
+}
+.octo-menu__dropdown-divider + * {
+    margin-top: 4px;
+}
