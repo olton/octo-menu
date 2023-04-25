@@ -11,15 +11,25 @@
     color: var(--octo-menu-text-color);
     display: block;
     position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--octo-menu-border-color);
+    border-bottom: 1px solid var(--octo-menu-border-color);
+}
+
+.octo-menu-container {
+    height: 127px;
+    overflow: hidden;
+    user-select: none;
 }
 
 .octo-menu__section {
     display: flex;
     padding: 4px 4px;
-    border-bottom: 1px solid var(--octo-menu-border-color);
+    //border-bottom: 1px solid var(--octo-menu-border-color);
     justify-content: flex-start;
     flex-shrink: 0;
     flex-flow: row nowrap;
+    position: relative;
 }
 
 .octo-menu__divider {
@@ -40,7 +50,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    align-content: flex-start;
+    //align-content: flex-start;
     flex-shrink: 0;
     flex-wrap: wrap;
 
@@ -78,6 +88,35 @@
     }
 }
 
-.octo-menu__group + .octo-menu__group {
+* + .octo-menu__group {
     border-left: 1px solid var(--octo-menu-border-color);
+}
+
+.octo-menu__scroll-left, .octo-menu__scroll-right {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--octo-menu-background);
+    color: var(--octo-menu-text-color);
+    border: 1px solid var(--octo-menu-border-color);
+    bottom: 0;
+    z-index: 10000;
+    cursor: pointer;
+    user-select: none;
+}
+
+.octo-menu__scroll-left {
+    left: 0;
+}
+
+.octo-menu__scroll-right {
+    right: 0;
+}
+
+.octo-menu .disabled, .octo-menu [disabled] {
+    pointer-events:none;
+    color: var(--octo-button-disabled-color);
 }

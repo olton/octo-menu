@@ -43,7 +43,7 @@ const App = () => {
                 </Group>
                 <Group title="Icon Button" style={{width: 100}}>
                     <IconButton caption="Home" icon="mif-home"/>
-                    <IconButton caption="Share" icon="mif-share"/>
+                    <IconButton caption="Share" icon="mif-share" disabled/>
                     <HorizontalDivider/>
                     <Dropdown>
                         <IconButton caption="Rocket" icon="mif-rocket"/>
@@ -58,7 +58,7 @@ const App = () => {
                 </Group>
                 <Group title="Tool Button">
                     <ToolButton title="Home" icon="mif-home"/>
-                    <ToolButton title="Share" icon="mif-share"/>
+                    <ToolButton title="Share" icon="mif-share" disabled/>
                     <Dropdown>
                         <ToolButton caption="Rocket" icon="mif-rocket"/>
                         <DropdownMenu>
@@ -74,8 +74,8 @@ const App = () => {
                     <SplitButton icon="mif-apps" caption="Apps">
                         <DropdownMenu>
                             <DropdownMenuItem caption="Item 1" checkable checked/>
-                            <DropdownMenuItem caption="Item 2"/>
-                            <DropdownMenuItem caption="Item 3"/>
+                            <DropdownMenuItem caption="Item 2" checkable/>
+                            <DropdownMenuItem caption="Item 3" checkable/>
                             <DropdownMenuDivider/>
                             <DropdownMenuGroup checked={2}>
                                 <DropdownMenuItem caption="Item 4"/>
@@ -84,16 +84,50 @@ const App = () => {
                             </DropdownMenuGroup>
                         </DropdownMenu>
                     </SplitButton>
+                    <VerticalDivider/>
+                    <SplitButton icon="mif-apps" caption="Apps" disabled disabledSecondary>
+                        <DropdownMenu>
+                            <DropdownMenuItem caption="Item 1" checkable checked/>
+                            <DropdownMenuItem caption="Item 2" checkable/>
+                            <DropdownMenuItem caption="Item 3" checkable/>
+                            <DropdownMenuDivider/>
+                            <DropdownMenuGroup checked={2}>
+                                <DropdownMenuItem caption="Item 4"/>
+                                <DropdownMenuItem caption="Item 5"/>
+                                <DropdownMenuItem caption="Item 6"/>
+                            </DropdownMenuGroup>
+                        </DropdownMenu>
+                    </SplitButton>
+                    <VerticalDivider/>
+                    <SplitButton icon="mif-apps" caption="Apps" onClick={ () => alert('Ku from main') } onClickSecondary={ () => alert('Ku from secondary') }></SplitButton>
                 </Group>
                 <Group title="Group">
-                    <ButtonGroup radio={true}>
-                        <ToolButton title="Bold" icon="mif-bold"/>
-                        <ToolButton title="Italic" icon="mif-italic"/>
+                    <ButtonGroup radio={false}>
+                        <ToolButton title="Bold" icon="mif-bold" hotkey="alt+b"/>
+                        <ToolButton title="Italic" icon="mif-italic" hotkey="alt+i"/>
+                        <ToolButton title="Underline" icon="mif-underline"  hotkey="alt+u"/>
                     </ButtonGroup>
+                    <VerticalDivider/>
+                    <ButtonGroup radio={true}>
+                        <ToolButton title="Left" icon="mif-paragraph-left"/>
+                        <ToolButton title="Center" icon="mif-paragraph-center"/>
+                        <ToolButton title="Right" icon="mif-paragraph-right"/>
+                    </ButtonGroup>
+                </Group>
+                <Group title="Overload">
+                    <Button caption="Home" icon="mif-home" disabled/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Rocket" icon="mif-rocket"/>
                 </Group>
 
                 <ServicePanel>
-                    <ToolButton title="Hotkeys" icon="mif-keyboard"/>
+                    <ToolButton title="Hotkeys" icon="mif-keyboard" onClick={() => alert("Button inside a ServicePanel clicked!")}/>
                 </ServicePanel>
             </Menu>
         </>

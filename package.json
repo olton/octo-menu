@@ -1,12 +1,11 @@
 {
-  "name": "@olton/octostar-menu",
-  "description": "Octostar Menu for React (Ribbon style menu)",
+  "name": "@olton/octo-menu",
+  "description": "Octo Menu for React (Ribbon style menu)",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Serhii Pimenov <serhii@pimenov.com.ua> (https://pimenov.com.ua)",
   "keywords": [
     "react",
-    "octostar",
     "ribbon",
     "ribbon-menu",
     "js",

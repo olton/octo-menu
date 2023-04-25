@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Button.less"
 
-const Button = ({caption, title, icon, image, hotkey, children, onClick, className}) => {
+const Button = ({caption, title, icon, image, hotkey, children, onClick, className, ...rest}) => {
     let classes = "octo-button"
 
     if (className) {
@@ -9,7 +9,7 @@ const Button = ({caption, title, icon, image, hotkey, children, onClick, classNa
     }
 
     return (
-        <button type="button" title={title} className={classes} data-hotkey={hotkey} onClick={onClick}>
+        <button type="button" title={title} className={classes} data-hotkey={hotkey} onClick={onClick} {...rest}>
             {icon && (
                 <span className="octo-button__icon">
                     <span className={icon}/>

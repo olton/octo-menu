@@ -15,10 +15,10 @@ const DropdownMenuGroup = ({children, checked = 0}) => {
     return (
         <>
             {Children.map(children, (item, index) => {
-                const isChecked = index === checkedItem
                 return cloneElement(item, {
                     ...item.props,
-                    checked: isChecked,
+                    checked: index === checkedItem,
+                    radio: true,
                     onClick: buttonClickHandler.bind(null, item, index)
                 })
             })}

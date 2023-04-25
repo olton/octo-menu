@@ -13,6 +13,8 @@ const HotkeyBinder = () => {
             return
         }
 
+        console.log(key)
+
         try {
 
             for(let el of hk_el) {

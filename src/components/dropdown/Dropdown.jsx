@@ -12,7 +12,24 @@ const Dropdown = ({children}) => {
         classes += " " + "dropped"
     }
 
+    const setPositionForDropdown = () => {
+        const dropdown = dropdownRef.current
+        const dropObject = dropdown.querySelector(".octo-menu__dropdown-menu")
+        const rectDropdown = dropdown.getBoundingClientRect()
+        const position = getComputedStyle(dropObject)["position"]
+
+        if (position === "fixed") {
+            dropObject.style.top = (rectDropdown.top + rectDropdown.height) + "px"
+            dropObject.style.left = (rectDropdown.left) + "px"
+        }
+    }
+
+    const handleScroll = (event) => {
+        setPositionForDropdown()
+    }
+
     const handleClick = (event) => {
+        setPositionForDropdown()
         event.preventDefault()
         setOpen(prev => !prev)
     }
@@ -25,8 +42,10 @@ const Dropdown = ({children}) => {
 
     useEffect(() => {
         document.addEventListener("mousedown", handleClickOutside)
+        document.addEventListener("scroll", handleScroll)
         return () => {
             document.removeEventListener("mousedown", handleClickOutside)
+            document.removeEventListener("scroll", handleScroll)
         }
     }, [])
 
