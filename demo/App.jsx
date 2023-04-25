@@ -80,7 +80,7 @@ const App = () => {
                             <DropdownMenuDivider/>
                             <DropdownMenuGroup checked={2}>
                                 <DropdownMenuItem caption="Item 4"/>
-                                <DropdownMenuItem caption="Item 5"/>
+                                <DropdownMenuItem caption="Item 5" onClick={(...rest) => console.log(...rest)}/>
                                 <DropdownMenuItem caption="Item 6"/>
                             </DropdownMenuGroup>
                         </DropdownMenu>
