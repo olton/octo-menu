@@ -19,7 +19,6 @@ import {
 import {MifIcon} from "@metroui/icons";
 
 import "./index.less"
-import {logPlugin} from "@babel/preset-env/lib/debug.js";
 
 const App = () => {
     return (
