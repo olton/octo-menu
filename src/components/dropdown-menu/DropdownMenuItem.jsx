@@ -26,9 +26,16 @@ const DropdownMenuItem = ({
         itemRef.current.classList.toggle("checked")
     }
 
+    const handleAnchorClick = (event) => {
+        const checked = !itemRef.current.classList.contains("checked")
+        if (typeof rest.onClick === "function") {
+            rest.onClick.apply(null, [checked, itemRef.current])
+        }
+    }
+
     return (
         <div className={classes} {...rest} onClick={handleItemClick} ref={itemRef}>
-            <a href={target} onClick={rest.onClick} data-hotkey={menuContext.hotkeys ? hotkey : ""}>
+            <a href={target} onClick={handleAnchorClick} data-hotkey={menuContext.hotkeys ? hotkey : ""}>
                 {caption}
                 {hotkey && menuContext.hotkeys && (
                     <span className="hotkey-key">{hotkey}</span>

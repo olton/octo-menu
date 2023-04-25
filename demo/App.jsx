@@ -19,6 +19,7 @@ import {
 import {MifIcon} from "@metroui/icons";
 
 import "./index.less"
+import {logPlugin} from "@babel/preset-env/lib/debug.js";
 
 const App = () => {
     return (
@@ -74,7 +75,7 @@ const App = () => {
                     <SplitButton icon="mif-apps" caption="Apps">
                         <DropdownMenu>
                             <DropdownMenuItem caption="Item 1" checkable checked/>
-                            <DropdownMenuItem caption="Item 2" checkable/>
+                            <DropdownMenuItem caption="Item 2" checkable onClick={(...rest) => console.log(...rest)}/>
                             <DropdownMenuItem caption="Item 3" checkable/>
                             <DropdownMenuDivider/>
                             <DropdownMenuGroup checked={2}>
@@ -85,19 +86,7 @@ const App = () => {
                         </DropdownMenu>
                     </SplitButton>
                     <VerticalDivider/>
-                    <SplitButton icon="mif-apps" caption="Apps" disabled disabledSecondary>
-                        <DropdownMenu>
-                            <DropdownMenuItem caption="Item 1" checkable checked/>
-                            <DropdownMenuItem caption="Item 2" checkable/>
-                            <DropdownMenuItem caption="Item 3" checkable/>
-                            <DropdownMenuDivider/>
-                            <DropdownMenuGroup checked={2}>
-                                <DropdownMenuItem caption="Item 4"/>
-                                <DropdownMenuItem caption="Item 5"/>
-                                <DropdownMenuItem caption="Item 6"/>
-                            </DropdownMenuGroup>
-                        </DropdownMenu>
-                    </SplitButton>
+                    <SplitButton icon="mif-apps" caption="Apps" disabled disabledSecondary></SplitButton>
                     <VerticalDivider/>
                     <SplitButton icon="mif-apps" caption="Apps" onClick={ () => alert('Ku from main') } onClickSecondary={ () => alert('Ku from secondary') }></SplitButton>
                 </Group>
