@@ -101,24 +101,33 @@ const App = () => {
                     <VerticalDivider/>
                     <SplitButton icon="mif-apps" caption="Apps" onClick={ () => alert('Ku from main') } onClickSecondary={ () => alert('Ku from secondary') }></SplitButton>
                 </Group>
-                <Group title="Group">
-                    <ButtonGroup radio={false}>
+                <Group title="Button Group">
+                    <ButtonGroup radio={false} style={{flexDirection: 'column'}}>
                         <ToolButton title="Bold" icon="mif-bold" hotkey="alt+b"/>
                         <ToolButton title="Italic" icon="mif-italic" hotkey="alt+i"/>
                         <ToolButton title="Underline" icon="mif-underline"  hotkey="alt+u"/>
                     </ButtonGroup>
                     <VerticalDivider/>
-                    <ButtonGroup radio={true}>
+                    <ButtonGroup radio={true} style={{flexDirection: 'column'}}>
                         <ToolButton title="Left" icon="mif-paragraph-left"/>
                         <ToolButton title="Center" icon="mif-paragraph-center"/>
                         <ToolButton title="Right" icon="mif-paragraph-right"/>
                     </ButtonGroup>
+                    <VerticalDivider/>
+                    <ButtonGroup radio={true} style={{flexDirection: 'column'}}>
+                        <IconButton caption="Left" icon="mif-paragraph-left"/>
+                        <IconButton caption="Center" icon="mif-paragraph-center"/>
+                        <IconButton caption="Right" icon="mif-paragraph-right"/>
+                    </ButtonGroup>
+                    <VerticalDivider/>
+                    <ButtonGroup radio={true}>
+                        <Button caption="Left" icon="mif-paragraph-left"/>
+                        <Button caption="Center" icon="mif-paragraph-center"/>
+                        <Button caption="Right" icon="mif-paragraph-right"/>
+                    </ButtonGroup>
                 </Group>
                 <Group title="Overload">
                     <Button caption="Home" icon="mif-home" disabled/>
-                    <Button caption="Home" icon="mif-home"/>
-                    <Button caption="Home" icon="mif-home"/>
-                    <Button caption="Home" icon="mif-home"/>
                     <Button caption="Home" icon="mif-home"/>
                     <Button caption="Home" icon="mif-home"/>
                     <Button caption="Home" icon="mif-home"/>

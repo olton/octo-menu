@@ -13,11 +13,10 @@ const HotkeyBinder = () => {
             return
         }
 
-        console.log(key)
-
         try {
-
             for(let el of hk_el) {
+                if (el.disabled) {return}
+                if (el.classList.contains('disabled')) {return}
                 const menu = closest(el, ".octo-menu")
                 if (menu) {
                     // Hotkey on element in Ribbon Menu
@@ -31,7 +30,6 @@ const HotkeyBinder = () => {
                     return
                 }
             }
-
         } catch (ex) {}
     }
 
