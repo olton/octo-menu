@@ -10,6 +10,7 @@ The following components are available to you:
 - Tool Button (same as an icon button, but without caption) 
 - Split Button 
 - Dropdown Menu
+- Dropdown Menu Groups
 - Dividers (vertical and horizontal) for divide buttons (or any elements) inside a group
 - Hotkey binder
 - Service Panel
@@ -59,5 +60,55 @@ const App = () => {
     )
 }
 ```
+
+## Components
+
+### Menu
+```javascript
+<Menu hotkeys={true} scrollStep={10}>
+    ...
+</Menu>
+```
+Menu props:
+- `hotkeys` - `true` or `false`, enable or disable hotkey binder
+- `ascrollStep` - int, default 10
+
+### Menu Group
+You must put Menu components into `Groups`
+```javascript
+<Menu>
+    <Group title="Group title">...</Group>
+    ...
+    <Group title="Group title">...</Group>
+</Menu>
+```
+Group props:
+- `title` - string, group title
+
+### Push Button
+```javascript
+<Menu>
+    <Group title="Group 1">
+        <Button 
+            caption={...}
+            title={...}
+            icon={...}
+            image={...}
+            hotkey={...}
+            onClick={...}
+            className={...}
+        />
+    </Group>
+</Menu>
+```
+Button props:
+- `caption` - button caption
+- `title` - button title hint
+- `icon` - button icon, can be string (for icon font) or HTML/JSX element
+- `image` - button image, can be string (for `src` property) or HTML/JSX element
+- `hotkey` - string ( `alt` `ctrl` `shift` + `simbol` ), for example `alt+ctrl+1`
+- `onClick` - onclick method 
+- `className` - addition classes
+
 
 [Demo](https://codesandbox.io/s/octo-menu-lbtu3j) on CodeSandbox.
