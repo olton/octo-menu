@@ -97,6 +97,7 @@ Group props:
             hotkey={...}
             onClick={...}
             className={...}
+            disabled={...}
         />
     </Group>
 </Menu>
@@ -109,6 +110,7 @@ Button props:
 - `hotkey` - string ( `alt` `ctrl` `shift` + `simbol` ), for example `alt+ctrl+1`
 - `onClick` - onclick method 
 - `className` - addition classes
+- `disabled` - boolean, if `true` button will disable
 
 
 [Demo](https://codesandbox.io/s/octo-menu-lbtu3j) on CodeSandbox.
