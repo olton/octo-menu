@@ -8,14 +8,24 @@ const IconButton = ({className, caption, title, icon, image, children, onClick, 
     }
     return (
         <button title={title} className={classes} onClick={onClick} data-hotkey={hotkey} {...rest}>
-            {icon && (
+            {icon && typeof icon === 'string' && (
                 <span className="octo-icon-button__icon">
                     <span className={icon}/>
                 </span>
             )}
-            {image && (
+            {icon && typeof icon !== 'string' && (
+                <span className="octo-icon-button__icon">
+                    {icon}
+                </span>
+            )}
+            {image && typeof image === 'string' && (
                 <span className="octo-icon-button__icon">
                     <img src={image} alt=""/>
+                </span>
+            )}
+            {image && typeof image !== 'string' && (
+                <span className="octo-icon-button__icon">
+                    {image}
                 </span>
             )}
             {caption && (

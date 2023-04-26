@@ -23,9 +23,9 @@ import "./index.less"
 const App = () => {
     return (
         <>
-            <Menu hotkeys={true}>
+            <Menu hotkeys={true} scrollStep={20}>
                 <Group title="Button">
-                    <Button caption="Home" icon="mif-home"/>
+                    <Button caption="Home" icon={<MifIcon name="home"/>}/>
                     <Button caption="Share" icon="mif-share"/>
                     <VerticalDivider/>
                     <Button caption="Rocket" icon="mif-rocket"/>
@@ -42,7 +42,7 @@ const App = () => {
                     </Dropdown>
                 </Group>
                 <Group title="Icon Button" style={{width: 100}}>
-                    <IconButton caption="Home" icon="mif-home"/>
+                    <IconButton caption="Home" icon={<MifIcon name="home"/>}/>
                     <IconButton caption="Share" icon="mif-share" disabled/>
                     <HorizontalDivider/>
                     <Dropdown>

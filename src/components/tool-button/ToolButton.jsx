@@ -8,14 +8,24 @@ const ToolButton = ({className, title, icon, image, children, onClick, hotkey, .
     }
     return (
         <button title={title} className={classes} onClick={onClick} data-hotkey={hotkey} {...rest}>
-            {icon && (
+            {icon && typeof icon === 'string' && (
                 <span className="octo-tool-button__icon">
                     <span className={icon}/>
                 </span>
             )}
-            {image && (
+            {icon && typeof icon !== 'string' && (
+                <span className="octo-tool-button__icon">
+                    {icon}
+                </span>
+            )}
+            {image && typeof image === 'string' && (
                 <span className="octo-tool-button__icon">
                     <img src={image} alt=""/>
+                </span>
+            )}
+            {image && typeof image !== 'string' && (
+                <span className="octo-tool-button__icon">
+                    {image}
                 </span>
             )}
             {children}

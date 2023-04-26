@@ -6,7 +6,7 @@ import {Group} from "./index.js";
 
 export const MenuContext = createContext({})
 
-const Menu = ({children, hotkeys}) => {
+const Menu = ({children, hotkeys, scrollStep = 10}) => {
     const menuRef = useRef()
     const sectionRef = useRef()
     const [scrollVisible, setScrollVisible] = useState(false)
@@ -28,7 +28,7 @@ const Menu = ({children, hotkeys}) => {
         section.style.left = 0
     }
 
-    const SHIFT_MENU_VAL = 10
+    const SHIFT_MENU_VAL = scrollStep
 
     const shiftMenuRight = (event) => {
         const section = sectionRef.current
