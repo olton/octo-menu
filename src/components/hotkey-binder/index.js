@@ -3,6 +3,8 @@ import {closest, getKey, isVisible} from "./helpers.js";
 
 const HotkeyBinder = () => {
     const hotkeyBinderKeyupHandler = (event) => {
+        if (event.repeat) return
+
         let key = getKey(event)
 
         // Get elements where hotkey is defined
@@ -12,6 +14,8 @@ const HotkeyBinder = () => {
         if (!hk_el.length) {
             return
         }
+
+        event.preventDefault()
 
         try {
             for(let el of hk_el) {
@@ -34,9 +38,9 @@ const HotkeyBinder = () => {
     }
 
     useEffect(() => {
-        document.addEventListener("keyup", hotkeyBinderKeyupHandler)
+        document.addEventListener("keydown", hotkeyBinderKeyupHandler)
         return () => {
-            document.removeEventListener("keyup", hotkeyBinderKeyupHandler)
+            document.removeEventListener("keydown", hotkeyBinderKeyupHandler)
         }
     }, [])
 

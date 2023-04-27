@@ -46,7 +46,7 @@ const App = () => {
                     <IconButton caption="Share" icon="mif-share" disabled/>
                     <HorizontalDivider/>
                     <Dropdown>
-                        <IconButton caption="Rocket" icon="mif-rocket"/>
+                        <IconButton caption="Rocket" icon="mif-rocket" hotkey="ctrl+s"/>
                         <DropdownMenu>
                             <DropdownMenuItem caption="Item 1" icon="" image=""/>
                             <DropdownMenuItem caption="Author's site" icon="mif-rocket" image="" target="https://pimenov.com.ua" hotkey="alt+h"/>
@@ -91,9 +91,9 @@ const App = () => {
                 </Group>
                 <Group title="Button Group">
                     <ButtonGroup radio={false} style={{flexDirection: 'column'}}>
-                        <ToolButton title="Bold" icon="mif-bold" hotkey="alt+b"/>
-                        <ToolButton title="Italic" icon="mif-italic" hotkey="alt+i"/>
-                        <ToolButton title="Underline" icon="mif-underline"  hotkey="alt+u"/>
+                        <ToolButton title="Bold (ctrl+b)" icon="mif-bold" hotkey="ctrl+b"/>
+                        <ToolButton title="Italic (ctrl+i)" icon="mif-italic" hotkey="ctrl+i"/>
+                        <ToolButton title="Underline (ctrl+u)" icon="mif-underline"  hotkey="ctrl+u"/>
                     </ButtonGroup>
                     <VerticalDivider/>
                     <ButtonGroup radio={true} style={{flexDirection: 'column'}}>

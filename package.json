@@ -1,7 +1,7 @@
 {
   "name": "@olton/octo-menu",
   "description": "Octo Menu for React (Ribbon style menu)",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "license": "MIT",
   "author": "Serhii Pimenov <serhii@pimenov.com.ua> (https://pimenov.com.ua)",
   "keywords": [
