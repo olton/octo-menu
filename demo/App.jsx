@@ -14,7 +14,7 @@ import {
     ButtonGroup,
     HorizontalDivider,
     VerticalDivider,
-    ServicePanel, DropdownMenuGroup
+    ServicePanel, DropdownMenuGroup, OVERFLOW_MODE_SCROLL, OVERFLOW_MODE_SUBMENU
 } from "../src";
 import {MifIcon} from "@metroui/icons";
 
@@ -23,7 +23,7 @@ import "./index.less"
 const App = () => {
     return (
         <>
-            <Menu hotkeys={true} scrollStep={20}>
+            <Menu hotkeys={true} scrollStep={20} overflow={OVERFLOW_MODE_SCROLL}>
                 <Group title="Button">
                     <Button caption="Home" icon={<MifIcon name="home"/>}/>
                     <Button caption="Share" icon="mif-share"/>

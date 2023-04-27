@@ -3,10 +3,13 @@ import "./Menu.less"
 import "../../themes/default/default.less"
 import HotkeyBinder from "../hotkey-binder/index.js"
 import {Group} from "./index.js";
+import ScrollButton from "../scroll-button/ScrollButton.jsx";
 
 export const MenuContext = createContext({})
+export const OVERFLOW_MODE_SCROLL = 'scroll'
+export const OVERFLOW_MODE_SUBMENU = 'menu'
 
-const Menu = ({children, hotkeys, scrollStep = 10}) => {
+const Menu = ({children, hotkeys, scrollStep = 10, overflow = OVERFLOW_MODE_SCROLL}) => {
     const menuRef = useRef()
     const sectionRef = useRef()
     const [scrollVisible, setScrollVisible] = useState(false)
@@ -99,12 +102,12 @@ const Menu = ({children, hotkeys, scrollStep = 10}) => {
         }}>
             <div className="octo-menu-container">
                 <nav className="octo-menu" ref={menuRef}>
-                    {scrollVisible && (<span ref={scrollLeftRef} className="octo-menu__scroll-left">&#10094;</span>)}
+                    {scrollVisible && overflow === OVERFLOW_MODE_SCROLL && (<ScrollButton refButton={scrollLeftRef} chevron="left"/>)}
                     <div className="octo-menu__section" ref={sectionRef}>
                         {children}
-                        <Group style={{width: 34}}></Group>
+                        <Group style={{width: 40}}></Group>
                     </div>
-                    {scrollVisible && (<span ref={scrollRightRef} className="octo-menu__scroll-right">&#10095;</span>)}
+                    {scrollVisible && overflow === OVERFLOW_MODE_SCROLL && (<ScrollButton refButton={scrollRightRef} chevron="right"/>)}
                     {hotkeys && <HotkeyBinder/>}
                 </nav>
             </div>

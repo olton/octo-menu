@@ -1,4 +1,4 @@
-import {Menu, Group, Divider, HorizontalDivider, VerticalDivider} from "./menu"
+import {Menu, Group, Divider, HorizontalDivider, VerticalDivider, OVERFLOW_MODE_SCROLL, OVERFLOW_MODE_SUBMENU} from "./menu"
 import {Button} from "./button"
 import {IconButton} from "./icon-button"
 import {ToolButton} from "./tool-button"
@@ -25,4 +25,6 @@ export {
     DropdownMenuGroup,
     ServicePanel,
     ButtonGroup,
+    OVERFLOW_MODE_SCROLL,
+    OVERFLOW_MODE_SUBMENU,
 }
